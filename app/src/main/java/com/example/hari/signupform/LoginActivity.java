@@ -38,6 +38,7 @@ public class LoginActivity extends ActionBarActivity {
                 String confirmPassword = mConfirmPasswordInput.getText().toString();
                 if (passWord.equals(confirmPassword)) {
                     Log.d(TAG, "Valid Password");
+                    User newUser=new User(userName,passWord);
                 }
 
 
