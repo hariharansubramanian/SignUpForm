@@ -1,5 +1,6 @@
 package com.example.hari.signupform;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,8 @@ public class LoginActivity extends ActionBarActivity {
                 if (passWord.equals(confirmPassword)) {
                     Log.d(TAG, "Valid Password");
                     User newUser=new User(userName,passWord);
+                    Intent i=new Intent(LoginActivity.this,HomeActivity.class);
+                    startActivity(i);
                 }
 
 
