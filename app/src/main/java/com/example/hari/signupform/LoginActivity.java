@@ -2,16 +2,47 @@ package com.example.hari.signupform;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.Objects;
 
 
 public class LoginActivity extends ActionBarActivity {
+
+    private static final String TAG ="MainActivity";
+    EditText mUserNameInput;
+    EditText mPasswordInput;
+    EditText mConfirmPasswordInput;
+    Button mSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mUserNameInput = (EditText) findViewById(R.id.userNameField);
+        mPasswordInput = (EditText) findViewById(R.id.passwordField);
+        mConfirmPasswordInput = (EditText) findViewById(R.id.confirmpasswordField);
+        mSubmit= (Button) findViewById(R.id.submit);
+
+        mSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userName=mUserNameInput.getText().toString();
+                String passWord = mPasswordInput.getText().toString();
+                String confirmPassword = mConfirmPasswordInput.getText().toString();
+                if (passWord.equals(confirmPassword)) {
+                    Log.d(TAG, "Valid Password");
+                }
+
+
+            }
+        });
     }
 
     @Override
