@@ -14,7 +14,7 @@ import java.util.Objects;
 
 
 public class LoginActivity extends ActionBarActivity {
-
+public static final String EXTRAKEY="EXTRA";
     private static final String TAG ="MainActivity";
     EditText mUserNameInput;
     EditText mPasswordInput;
@@ -41,7 +41,9 @@ public class LoginActivity extends ActionBarActivity {
                     Log.d(TAG, "Valid Password");
                     User newUser=new User(userName,passWord);
                     Intent i=new Intent(LoginActivity.this,HomeActivity.class);
+                    i.putExtra(EXTRAKEY,userName);
                     startActivity(i);
+
                 }
 
 
