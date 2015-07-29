@@ -11,9 +11,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/userNameLabel"
@@ -28,8 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/userNameLabel"
             android:layout_weight="75"
-            android:hint="@string/username"
-             />
+            android:hint="@string/username" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,9 +49,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="75"
-            android:password="true"
-            android:textSize="15sp"
-            android:hint="@string/enterpassword" />
+            android:hint="@string/enterpassword"
+            android:password="true" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +71,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="75"
-            android:hint="@string/confirmpassword2" />
+            android:hint="@string/confirmpassword2"
+            android:password="true" />
 
     </LinearLayout>
 
