@@ -9,13 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.Objects;
 
 
 public class LoginActivity extends ActionBarActivity {
-public static final String EXTRAKEY="EXTRA";
-    private static final String TAG ="MainActivity";
+    public static final String EXTRAKEY = "EXTRA";
+    private static final String TAG = "MainActivity";
     EditText mUserNameInput;
     EditText mPasswordInput;
     EditText mConfirmPasswordInput;
@@ -25,28 +26,24 @@ public static final String EXTRAKEY="EXTRA";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mUserNameInput = (EditText) findViewById(R.id.userNameField);
         mPasswordInput = (EditText) findViewById(R.id.passwordField);
         mConfirmPasswordInput = (EditText) findViewById(R.id.confirmpasswordField);
-        mSubmit= (Button) findViewById(R.id.submit);
+        mSubmit = (Button) findViewById(R.id.submit);
 
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userName=mUserNameInput.getText().toString();
+                String userName = mUserNameInput.getText().toString();
                 String passWord = mPasswordInput.getText().toString();
                 String confirmPassword = mConfirmPasswordInput.getText().toString();
                 if (passWord.equals(confirmPassword)) {
-                    Log.d(TAG, "Valid Password");
-                    User newUser=new User(userName,passWord);
-                    Intent i=new Intent(LoginActivity.this,HomeActivity.class);
-                    i.putExtra(EXTRAKEY,userName);
+                    Log.d(TAG, "Password is valid.. Creating new user");
+                    User newUser = new User(userName, passWord);
+                    Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                    i.putExtra(EXTRAKEY, newUser);
                     startActivity(i);
-
                 }
-
-
             }
         });
     }

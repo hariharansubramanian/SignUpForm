@@ -15,10 +15,9 @@ public class HomeActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        
-        String userName=getIntent().getStringExtra(LoginActivity.EXTRAKEY);
         TextView tv= (TextView) findViewById(R.id.textviewmessage);
-        tv.setText("Welcome"+ userName);
+        User user= (User) getIntent().getSerializableExtra(LoginActivity.EXTRAKEY);
+        tv.setText("Welcome"+ user.getUsername());
     }
 
     @Override

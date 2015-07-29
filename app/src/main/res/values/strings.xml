@@ -13,4 +13,5 @@
     <string name="confirmpassword">Confirm</string>
     <string name="confirmpassword2">Please Confirm your password</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="Welcome">welcome</string>
 </resources>
